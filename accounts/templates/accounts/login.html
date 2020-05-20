@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Real Estate Page Template</title>
+    <!-- Bootstrap -->
+    <link href="{% static 'bootstrap-4.3.1.css' %}" rel="stylesheet">
+    <link href="{% static 'gtu.css' %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <h3 class="pto"> <a class="tpo" href="#">DreamLease.in</a> </h3>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About.html">About Us</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="trial.html">Contact Us</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="post.html">Post a Ad</a>
+          </li>
+
+
+        </ul>
+        <class="form-inline my-2 my-lg-0">
+			 <a class="btn-outline-success my-2 my-sm-0" href="signup.html">Sign Up</a>&nbsp&nbsp&nbsp
+
+          <a class="btn-outline-success my-2 my-sm-0" href="contact.html">Login</a>
+        </form>
+      </div>
+    </nav>
+
+
+<form  method="POST" action="{% url 'login' %}">
+
+  {% csrf_token %}
+  <div class="imgcontainer">
+
+    <img src="{% static 'uoi.png' %}" alt="Avatar" class="avatar">
+  </div>
+  <p style="color:red;text-align:center">{{ error }}</p>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw"><a href="#">Forgot password?</a></span>
+  </div>
+</form>
+
+    <div class="container"> </div>
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="oly">Copyright © DreamLease.in All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.3.1.js' %}"></script>
+  </body>
+</html>
